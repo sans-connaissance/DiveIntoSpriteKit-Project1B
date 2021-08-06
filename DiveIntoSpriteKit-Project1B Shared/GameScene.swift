@@ -10,6 +10,7 @@ import SpriteKit
 class GameScene: SKScene {
     
     let player = SKSpriteNode(imageNamed: "player-rocket")
+    var touchingPlayer = false
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -34,6 +35,7 @@ class GameScene: SKScene {
         addChild(background)
         
         player.position.x = -400
+        player.zPosition = 1
         addChild(player)
         
         if let particles = SKEmitterNode(fileNamed: "SpaceDust") {
@@ -57,21 +59,45 @@ extension GameScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        
+        findPlayer(touches)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard touchingPlayer else { return }
+        guard let touch = touches.first else { return }
+        
+        let location = touch.location(in: self)
+        player.position = location
         
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        touchingPlayer = false
+        
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        touchingPlayer = false
     }
-    
+ 
+    func findPlayer(_ touches: Set<UITouch>) {
+        //recgonize that user is touching the screen
+        guard let touch = touches.first else { return }
+        
+        //determine location of the touch
+        let location = touch.location(in: self)
+        
+        //what nodes are being tapped at that location?
+        let tappedNodes = nodes(at: location)
+        
+        if tappedNodes.contains(player) {
+            touchingPlayer = true
+        }
+        
+    }
     
 }
 
