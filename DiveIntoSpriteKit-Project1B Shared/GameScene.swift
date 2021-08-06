@@ -9,6 +9,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    let player = SKSpriteNode(imageNamed: "player-rocket")
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -32,7 +33,11 @@ class GameScene: SKScene {
         background.zPosition = -1
         addChild(background)
         
+        player.position.x = -400
+        addChild(player)
+        
         if let particles = SKEmitterNode(fileNamed: "SpaceDust") {
+            particles.advanceSimulationTime(10)
             particles.position.x = 512
             addChild(particles)
         }
