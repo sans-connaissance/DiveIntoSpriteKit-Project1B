@@ -28,7 +28,9 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-        
+        let background = SKSpriteNode(imageNamed: "space.jpg")
+        background.zPosition = -1
+        addChild(background)
         
     }
     
