@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		414EA87C26BCCA6400602F0D /* SpaceDust.sks in Resources */ = {isa = PBXBuildFile; fileRef = 414EA87B26BCCA6400602F0D /* SpaceDust.sks */; };
 		41EAFE9526BC9E28007FC71E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EAFE9426BC9E28007FC71E /* AppDelegate.swift */; };
 		41EAFE9726BC9E28007FC71E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EAFE9626BC9E28007FC71E /* GameViewController.swift */; };
 		41EAFE9A26BC9E28007FC71E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EAFE9826BC9E28007FC71E /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		414EA87B26BCCA6400602F0D /* SpaceDust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceDust.sks; sourceTree = "<group>"; };
 		41EAFE8A26BC9E27007FC71E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		41EAFE8B26BC9E27007FC71E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		41EAFE8C26BC9E28007FC71E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				41EAFE8A26BC9E27007FC71E /* GameScene.sks */,
 				41EAFE8B26BC9E27007FC71E /* GameScene.swift */,
+				414EA87B26BCCA6400602F0D /* SpaceDust.sks */,
 				41EAFE8C26BC9E28007FC71E /* Assets.xcassets */,
 			);
 			path = "DiveIntoSpriteKit-Project1B Shared";
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				414EA87C26BCCA6400602F0D /* SpaceDust.sks in Resources */,
 				41EAFEA026BC9E28007FC71E /* GameScene.sks in Resources */,
 				41EAFE9A26BC9E28007FC71E /* Main.storyboard in Resources */,
 				41EAFE9D26BC9E28007FC71E /* LaunchScreen.storyboard in Resources */,

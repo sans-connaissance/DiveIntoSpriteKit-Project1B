@@ -32,6 +32,11 @@ class GameScene: SKScene {
         background.zPosition = -1
         addChild(background)
         
+        if let particles = SKEmitterNode(fileNamed: "SpaceDust") {
+            particles.position.x = 512
+            addChild(particles)
+        }
+        
     }
     
     
