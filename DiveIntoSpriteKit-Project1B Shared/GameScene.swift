@@ -64,11 +64,7 @@ extension GameScene {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        guard touchingPlayer else { return }
-        guard let touch = touches.first else { return }
-        
-        let location = touch.location(in: self)
-        player.position = location
+        trackPlayer(touches)
         
     }
     
@@ -81,22 +77,6 @@ extension GameScene {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         touchingPlayer = false
-    }
- 
-    func findPlayer(_ touches: Set<UITouch>) {
-        //recgonize that user is touching the screen
-        guard let touch = touches.first else { return }
-        
-        //determine location of the touch
-        let location = touch.location(in: self)
-        
-        //what nodes are being tapped at that location?
-        let tappedNodes = nodes(at: location)
-        
-        if tappedNodes.contains(player) {
-            touchingPlayer = true
-        }
-        
     }
     
 }
