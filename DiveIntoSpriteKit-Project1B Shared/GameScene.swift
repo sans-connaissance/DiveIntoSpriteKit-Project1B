@@ -10,6 +10,7 @@ import SpriteKit
 class GameScene: SKScene {
     
     let player = SKSpriteNode(imageNamed: "player-rocket")
+    
     var touchingPlayer = false
     
     class func newGameScene() -> GameScene {

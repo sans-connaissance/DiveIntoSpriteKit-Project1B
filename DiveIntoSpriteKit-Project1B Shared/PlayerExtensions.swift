@@ -26,6 +26,7 @@ extension GameScene {
         
     }
     
+    
     func trackPlayer(_ touches: Set<UITouch>) {
         guard touchingPlayer else { return }
         guard let touch = touches.first else { return }
