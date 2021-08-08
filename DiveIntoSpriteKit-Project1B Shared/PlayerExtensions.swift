@@ -24,9 +24,34 @@ extension GameScene {
             touchingPlayer = true
         }
         
+        if tappedNodes.contains(controlUp) {
+            touchingControlUp = true
+        }
+        
+        if tappedNodes.contains(controlDown) {
+            touchingControlDown = true
+        }
+        
+        
+        
+    }
+    
+    func movePlayerUp() {
+        guard touchingControlUp else { return }
+        
+        player.position.x += 10
+        
+    }
+    
+    func movePlayerDown() {
+        guard touchingControlDown else { return }
+        
+        player.position.x -= 10
+        
     }
     
     
+
     func trackPlayer(_ touches: Set<UITouch>) {
         guard touchingPlayer else { return }
         guard let touch = touches.first else { return }
@@ -34,6 +59,11 @@ extension GameScene {
         let location = touch.location(in: self)
         player.position = location
     }
+    
+    
+    
+    
+    
     
 }
 

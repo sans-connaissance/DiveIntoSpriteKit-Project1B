@@ -10,6 +10,11 @@ import SpriteKit
 class GameScene: SKScene {
     
     let player = SKSpriteNode(imageNamed: "player-rocket")
+    let controlUp = SKSpriteNode(imageNamed: "coin")
+    let controlDown = SKSpriteNode(imageNamed: "coin")
+    
+    var touchingControlUp = false
+    var touchingControlDown = false
     
     var touchingPlayer = false
     
@@ -39,6 +44,14 @@ class GameScene: SKScene {
         player.zPosition = 1
         addChild(player)
         
+        controlUp.position.x = -100
+        controlUp.zPosition = 1
+        addChild(controlUp)
+        
+        controlDown.position.x = -200
+        controlDown.zPosition = 1
+        addChild(controlDown)
+        
         if let particles = SKEmitterNode(fileNamed: "SpaceDust") {
             particles.advanceSimulationTime(10)
             particles.position.x = 512
@@ -61,6 +74,8 @@ extension GameScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         findPlayer(touches)
+        movePlayerUp()
+        movePlayerDown()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -72,12 +87,16 @@ extension GameScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         touchingPlayer = false
+        touchingControlUp = false
+        touchingControlDown = false
         
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         touchingPlayer = false
+        touchingControlUp = false
+        touchingControlDown = false
     }
     
 }
